@@ -64,5 +64,5 @@ groups.parsed_response #=> {"message"=>{"vk"=>[7389, {"gid"=>52734067, "name"=>"
 ### Документация
 
 Документация к методам api находится [по адресу](http://api.2net.me/index/info).
-Так же можно попробовать api через web-интрфейс [тут](http://api.2net.me/index).
+Так же можно попробовать api через web-интерфейс [тут](http://api.2net.me/index).
 
