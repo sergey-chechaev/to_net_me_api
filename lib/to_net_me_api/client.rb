@@ -79,9 +79,3 @@ module ToNetMeApi
     end
   end
 end
-
-
-# to_net_me = ToNetMeApi::Client.new('01qw621sa14')
-# # puts to_net_me.authorized?.inspect
-# vk = to_net_me.search.groupsbyid(:gids=>'my_bikes',:soc=>'vk')
-# puts vk.inspect
