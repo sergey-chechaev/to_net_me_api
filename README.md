@@ -45,37 +45,20 @@ $ gem install to_net_me_api
 ``` ruby
 
 # создаем клиент
-
 @to_net_me = ToNetMeApi::Client.new('auth_key')
-
 # и вызываем методы API
-
 groups = @to_net_me.search.groups(:name=>'велосипеды',:vk=>'true')
 
-
-
 # методы возвращают объект HTTParty 
-
 # в котором находится ответ от сервека api.2net.me
-
 groups.parsed_response #=> {"message"=>{"vk"=>[7389, {"gid"=>52734067, "name"=>"Велосипеды"....
 
-
-
-
-
 # в ruby принято использовать snake_case в названиях методов,
-
 # поэтому search.groupsById становится search.groups_by_id
-
 @to_net_me.search.groups_by_id(:gids=>'37856556',:soc=>'vk')
 
-
-
 # если API 2net.me ожидает получить параметр в виде списка,
-
 # разделенного запятыми, то его можно передать массивом
-
 @to_net_me.search.groups_by_id(:gids=>'2net_me,37856556,38019449',:soc=>'vk')
 ```
 ### Документация
