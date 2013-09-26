@@ -62,6 +62,17 @@ groups.parsed_response #=> {"message"=>{"vk"=>[7389, {"gid"=>52734067, "name"=>"
 # разделенного запятыми, то его можно передать массивом
 @to_net_me.search.groups_by_id(:gids=>'2net_me,37856556,38019449',:soc=>'vk')
 ```
+
+### Конфигурация
+``` ruby
+# для смены адреса запроса api например на sandbox.api
+# создайте файл конфигурации to_net_me_api.rb в папке config/initializers 
+# и укажите там следующее 
+ToNetMeApi.configure do |config|
+  config.api_core='http://sandbox.api.2net.me/'
+end
+```
+
 ### Документация
 
 Документация к методам api находится [по адресу](http://api.2net.me/index/info).
