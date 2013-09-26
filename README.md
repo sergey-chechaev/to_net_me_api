@@ -43,6 +43,7 @@ $ gem install to_net_me_api
 
 
 ``` ruby
+require 'to_net_me_api' #=> true
 
 # создаем клиент
 @to_net_me = ToNetMeApi::Client.new('auth_key')

@@ -1,4 +1,4 @@
 module ToNetMeApi
   # Library version.
-  VERSION = '0.1.beta'
+  VERSION = '0.2'
 end
