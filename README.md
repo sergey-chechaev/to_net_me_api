@@ -60,7 +60,7 @@ groups.parsed_response #=> {"message"=>{"vk"=>[7389, {"gid"=>52734067, "name"=>"
 
 # если API 2net.me ожидает получить параметр в виде списка,
 # разделенного запятыми, то его можно передать массивом
-@to_net_me.search.groups_by_id(:gids=>'2net_me,37856556,38019449',:soc=>'vk')
+@to_net_me.search.groups_by_id(:gids=>['2net_me',37856556,38019449],:soc=>'vk')
 ```
 
 ### Конфигурация
