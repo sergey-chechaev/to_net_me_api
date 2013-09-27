@@ -1,7 +1,3 @@
-# require '~/rubystack/projects/users_part/lib/to_net_me_api/namespace'
-# require '~/rubystack/projects/users_part/lib/to_net_me_api/resolvable'
-# require '~/rubystack/projects/users_part/lib/to_net_me_api/resolver'
-# require '~/rubystack/projects/users_part/lib/to_net_me_api/method'
 module ToNetMeApi
   # Класс, представляющий соединение с api.2net.me. 
   class Client
@@ -32,9 +28,9 @@ module ToNetMeApi
     def initialize(auth_key = nil)
       if auth_key.respond_to?(:auth_key) && auth_key.respond_to?(:params)
         # auth_key is an OAuth2::Accessauth_key
-        @auth_key      = auth_key.auth_key
-        @user_id    = auth_key.params['user_id']
-        @expires_at = Time.at(auth_key.expires_at) unless auth_key.expires_at.nil?
+        @auth_key    = auth_key.auth_key
+        @user_id     = auth_key.params['user_id']
+        @expires_at  = Time.at(auth_key.expires_at) unless auth_key.expires_at.nil?
       else
         # если auth_key нет или пришла строка (string)
         @auth_key = auth_key
@@ -55,11 +51,9 @@ module ToNetMeApi
     # Права доступа для auth_key.
     # @return Symbol  
     def scope
-
       SCOPE.reject do |access_scope, mask|	
-      	return SCOPE.invert[settings]
+        SCOPE.invert[settings]
       end
-
     end
     
     # Если вызываемы метод содержется в namespace, создается новый  `VkontakteApi::Namespace` инстанс.

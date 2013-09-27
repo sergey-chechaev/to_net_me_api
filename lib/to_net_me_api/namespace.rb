@@ -1,7 +1,3 @@
-require '~/rubystack/projects/users_part/lib/to_net_me_api/resolvable'
-require '~/rubystack/projects/users_part/lib/to_net_me_api/resolver'
-require 'yaml'
-
 module ToNetMeApi
   # API метод namespace (такие как `users` или `search`).
   # 
@@ -14,9 +10,7 @@ module ToNetMeApi
     
     # создает и вызывает `ToNetMeApi::Method` используя `ToNetMeApi::Resolver#call_method`.
     def method_missing(*args, &block)
-    	
       call_method(args, &block)
-
     end
     
     class << self

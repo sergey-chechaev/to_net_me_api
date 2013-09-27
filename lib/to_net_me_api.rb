@@ -15,8 +15,6 @@ require 'to_net_me_api/method'
 # Main module.
 module ToNetMeApi
   extend ToNetMeApi::Configuration
-  #extend VkontakteApi::Authorization
-  #extend VkontakteApi::Uploading
   
   class << self
     # Creates a short alias `TNM` for `ToNetMeApi` module.

@@ -1,5 +1,3 @@
-# require '~/rubystack/projects/users_part/lib/to_net_me_api/api'
-# require '~/rubystack/projects/users_part/lib/to_net_me_api/result'
 module ToNetMeApi
   # An API method. It is responsible for generating it's full name and determining it's type.
   class Method
