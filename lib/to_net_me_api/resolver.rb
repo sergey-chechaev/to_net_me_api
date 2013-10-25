@@ -1,4 +1,3 @@
-# require 'hashie'
 module ToNetMeApi
   # A mixin for classes that will resolve other classes' objects via `#method_missing`.
   module Resolver
