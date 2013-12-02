@@ -12,9 +12,8 @@ module ToNetMeApi
     def call(args = {}, &block)
       # raise full_name.inspect
       response = API.call(full_name, args, auth_key)
-      # raise type.inspect
       # когда ответ бует стандартизирован тогда нужно будет делать вывод результата иобработку ошибок
-      # Result.process(response, type, block)
+      Result.process(response, type, block)
     end
     
   private

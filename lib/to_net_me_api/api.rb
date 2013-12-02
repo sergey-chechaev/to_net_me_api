@@ -5,11 +5,12 @@ module ToNetMeApi
     class << self
     
       def set_api_core
-        unless ToNetMeApi.api_core
-          ToNetMeApi.reset
-        else
-          ToNetMeApi.api_core
-        end
+        "http://sandbox.api.2net.me/"
+        # unless ToNetMeApi.api_core
+        #   ToNetMeApi.reset
+        # else
+        #   ToNetMeApi.api_core
+        # end
       end
 
       def call(attrs,options={},auth_key = nil)
@@ -17,6 +18,8 @@ module ToNetMeApi
         options.merge!(@auth)
         HTTParty.get(set_api_core+attrs,:query => options)
       end
+
+
       
     end
   end

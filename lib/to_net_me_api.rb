@@ -10,6 +10,7 @@ require 'to_net_me_api/resolvable'
 require 'to_net_me_api/client'
 require 'to_net_me_api/namespace'
 require 'to_net_me_api/method'
+require 'to_net_me_api/error'
 
 
 # Main module.
@@ -19,7 +20,7 @@ module ToNetMeApi
   class << self
     # Creates a short alias `TNM` for `ToNetMeApi` module.
     def register_alias
-      Object.const_set(:TNM, ToNetMeApi)
+      Object.const_set(:TNMG, ToNetMeApi)
     end
     
     # Removes the `TNM` alias.

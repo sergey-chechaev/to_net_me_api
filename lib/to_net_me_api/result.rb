@@ -11,7 +11,6 @@ module ToNetMeApi
       # @return [Array, Hashie::Mash] The processed result.
       # @raise [ToNetMeApi::Error] raised when VKontakte returns an error response.
       def process(response, type, block)
-        raise response['error_code'].inspect
         result = extract_result(response)
         
         if result.respond_to?(:each)
@@ -28,10 +27,10 @@ module ToNetMeApi
       
     private
       def extract_result(response)
-        if response.error?
-          raise ToNetMeApi::Error.new(response.error)
+        if error?(response)
+          raise ToNetMeApi::Error.new(response["message"]["error"])
         else
-          response.response
+          response
         end
       end
       
@@ -43,6 +42,10 @@ module ToNetMeApi
         else
           parameter
         end
+      end
+
+      def error?(response)
+        response["message"].include?("error")
       end
     end
   end

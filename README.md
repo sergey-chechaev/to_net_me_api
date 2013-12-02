@@ -63,6 +63,32 @@ groups.parsed_response #=> {"message"=>{"vk"=>[7389, {"gid"=>52734067, "name"=>"
 @to_net_me.search.groups_by_id(:gids=>['2net_me',37856556,38019449],:soc=>'vk')
 ```
 
+### Обработка капчи из контакта
+``` ruby
+# для того что бы обратотать капчу которая может появится при частом обращение api контакта
+# желательно обрабатывать запросы к api 2net.me на наличие ошибки с кодом 14
+# пример
+
+to_net_me = ToNetMeApi::Client.new(current_user.auth_key)
+to_net_me = ToNetMeApi::Client.new('01qw621sa14')
+puts to_net_me.authorized?.inspect
+begin
+  vk = to_net_me.test.captcha(:vk=>true)
+  puts vk.inspect
+rescue ToNetMeApi::Error => e
+  if e.error_code == 14
+  	# показываем юзеру картинку, URL которой
+    # можно получить методом e.captcha_img,
+    # и после этого снова вызываем метод:
+    vk = to_net_me.test.captcha(:vk=>true,:captcha_sid=>"тут должен быть sid",:captcha_key=>"тут должна быть капча с картинки")
+    puts vk.inspect
+  else
+     puts "Ошибка: " + e.error_code.to_s
+  end
+```
+
+
+
 ### Конфигурация
 ``` ruby
 # для смены адреса запроса api например на sandbox.api

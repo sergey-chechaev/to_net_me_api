@@ -1,5 +1,6 @@
 module ToNetMeApi
 
+
   module Resolvable
     attr_reader :name
     

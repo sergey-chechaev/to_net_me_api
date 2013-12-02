@@ -73,3 +73,57 @@ module ToNetMeApi
     end
   end
 end
+
+# ToNetMeApi.configure {|config| config.api_core='http://sandbox.api.2net.me/'}
+# to_net_me = ToNetMeApi::Client.new('01qw621sa14')
+# puts to_net_me.authorized?.inspect
+# begin
+#   vk = to_net_me.test.captcha(:gids=>'my_bikes',:vk=>1742410)
+#   puts vk.inspect
+# rescue ToNetMeApi::Error => e
+#   if e.error_code == 14
+#     puts e.message
+#     puts e.error_code
+#     puts e.captcha_img
+#     vk = to_net_me.search.groupsbyid(:gids=>'my_bikes',:vk=>1742410,:captcha_sid=>"",:captcha_key=>"")
+#     # показываем юзеру картинку, URL которой
+#     # можно получить методом e.captcha_img,
+#     # и после этого снова вызываем метод:
+#     # puts vk.inspect
+#     # vk.wall.edit(post_id: 12345, message: 'hello world', captcha_sid: e.captcha_sid, captcha_key: params[:captcha])
+#   else
+#      puts "no 14"
+#   end
+# end
+
+# begin
+#   vk = to_net_me.search.groupsbyid(:gids=>'my_bikes',:vk=>1742410)
+#   puts vk.inspect
+# rescue ToNetMeApi::Error => e
+#   if e.error_code == 14
+#     puts e.message
+#     puts e.error_code
+#     puts e.captcha_img
+#     vk = to_net_me.search.groupsbyid(:gids=>'my_bikes',:vk=>1742410,:captcha_sid=>"",:captcha_key=>"")
+#     # показываем юзеру картинку, URL которой
+#     # можно получить методом e.captcha_img,
+#     # и после этого снова вызываем метод:
+#     # puts vk.inspect
+#     # vk.wall.edit(post_id: 12345, message: 'hello world', captcha_sid: e.captcha_sid, captcha_key: params[:captcha])
+#   else
+#      puts "no 14"
+#   end
+# end
+
+
+
+
+
+
+
+
+
+
+
+
+
