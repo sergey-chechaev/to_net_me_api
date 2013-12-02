@@ -63,14 +63,13 @@ groups.parsed_response #=> {"message"=>{"vk"=>[7389, {"gid"=>52734067, "name"=>"
 @to_net_me.search.groups_by_id(:gids=>['2net_me',37856556,38019449],:soc=>'vk')
 ```
 
-### Обработка капчи из контакта
+### Обработка капчи vkontakte
 ``` ruby
-# для того что бы обратотать капчу которая может появится при частом обращение api контакта
-# желательно обрабатывать запросы к api 2net.me на наличие ошибки с кодом 14
+# с помощью методов ToNetMeApi::Error.captcha_img и ToNetMeApi::Error.captcha_sid
+# можно обработать ситуацию когда vk вернул нам 14 код
 # пример
 
 to_net_me = ToNetMeApi::Client.new(current_user.auth_key)
-to_net_me = ToNetMeApi::Client.new('01qw621sa14')
 puts to_net_me.authorized?.inspect
 begin
   vk = to_net_me.test.captcha(:vk=>true)
