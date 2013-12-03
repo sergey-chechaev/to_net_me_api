@@ -11,6 +11,7 @@ require 'to_net_me_api/client'
 require 'to_net_me_api/namespace'
 require 'to_net_me_api/method'
 require 'to_net_me_api/error'
+require 'to_net_me_api/result'
 
 
 
