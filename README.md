@@ -90,11 +90,12 @@ rescue ToNetMeApi::Error => e
 
 ### Конфигурация
 ``` ruby
-# для смены адреса запроса api например на sandbox.api
+# для смены адреса запроса api, http глагола (по умолчанию post)
 # создайте файл конфигурации to_net_me_api.rb в папке config/initializers 
 # и укажите там следующее 
 ToNetMeApi.configure do |config|
   config.api_core='http://sandbox.api.2net.me/'
+  config.http_verb=:post
 end
 ```
 
