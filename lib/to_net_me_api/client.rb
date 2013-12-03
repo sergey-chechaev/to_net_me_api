@@ -41,7 +41,16 @@ module ToNetMeApi
     def authorized?
       !@auth_key.nil?
     end
-    
+    # текущий http глагол 
+    def http_verb
+      ToNetMeApi.http_verb
+    end
+
+    # текущий адрес api
+    def http_path
+      ToNetMeApi.api_core
+    end
+
      # Просрочет ключь или нет.
     def expired?
       @expires_at && @expires_at < Time.now
@@ -57,7 +66,7 @@ module ToNetMeApi
     end
     
     # Если вызываемы метод содержется в namespace, создается новый  `VkontakteApi::Namespace` инстанс.
-    # `VkontakteApi::Namespace` так же выхывает method_missing для метода объекта Namespace
+    # `VkontakteApi::Namespace` так же вызывает method_missing для метода объекта Namespace
     # если нет namspace `VkontakteApi::Method` создаеся объект API в который передаются параметры.
     def method_missing(*args, &block)
       if Namespace.exists?(args.first)

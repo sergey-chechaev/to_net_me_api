@@ -13,6 +13,7 @@ require 'to_net_me_api/method'
 require 'to_net_me_api/error'
 
 
+
 # Main module.
 module ToNetMeApi
   extend ToNetMeApi::Configuration
@@ -20,7 +21,7 @@ module ToNetMeApi
   class << self
     # Creates a short alias `TNM` for `ToNetMeApi` module.
     def register_alias
-      Object.const_set(:TNMG, ToNetMeApi)
+      Object.const_set(:TNM, ToNetMeApi)
     end
     
     # Removes the `TNM` alias.
